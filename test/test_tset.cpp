@@ -16,7 +16,9 @@ TEST(TSet, can_insert_non_existing_element)
     const size_t size = 5;
     const uint k = 3;
     TSet set(size);
+    std::cout << set;
     set.insElem(k);
+    std::cout << set;
 
     EXPECT_NE(set.isMember(k), false);
 }
@@ -26,8 +28,11 @@ TEST(TSet, can_insert_existing_element)
     const size_t size = 5;
     const uint k = 3;
     TSet set(size);
+    std::cout << set;
     set.insElem(k);
+    std::cout << set;
     set.insElem(k);
+    std::cout << set;
 
     EXPECT_NE(set.isMember(k), false);
 }
