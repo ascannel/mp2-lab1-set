@@ -35,18 +35,18 @@ size_t TSet::getMaxPower() const // получить макс. к-во эл-то
     return maxPower;
 }
 
-bool TSet::isMember(const uint elem) const // элемент множества?
+bool TSet::isMember(const myUint elem) const // элемент множества?
 {
     if (bitField.getBit(elem) == true) return true;
     else return false;
 }
 
-void TSet::insElem(const uint elem) // включение элемента множества
+void TSet::insElem(const myUint elem) // включение элемента множества
 {
     bitField.setBit(elem);
 }
 
-void TSet::delElem(const uint elem) // исключение элемента множества
+void TSet::delElem(const myUint elem) // исключение элемента множества
 {
     bitField.clrBit(elem);
 }
@@ -79,14 +79,14 @@ TSet TSet::operator+(const TSet& s) // объединение
     return set;
 }
 
-TSet TSet::operator+(const uint elem) // объединение с элементом
+TSet TSet::operator+(const myUint elem) // объединение с элементом
 {
     TSet set(*this);
     if (!isMember(elem)) set.insElem(elem);
     return set;
 }
 
-TSet TSet::operator-(const uint elem) // разность с элементом
+TSet TSet::operator-(const myUint elem) // разность с элементом
 {
     TSet set(*this);
     if (isMember(elem)) set.delElem(elem);
